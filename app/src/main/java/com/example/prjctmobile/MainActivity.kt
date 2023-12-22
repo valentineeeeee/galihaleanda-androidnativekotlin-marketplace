@@ -7,6 +7,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
 import com.example.prjctmobile.databinding.ActivityMainBinding
+import com.example.prjctmobile.fragment.BukuFragment
 import com.google.android.material.navigation.NavigationView
 
 
