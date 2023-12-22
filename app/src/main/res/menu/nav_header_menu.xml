@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:title="@string/pakaian">
+            <menu>
+                <item
+                    android:id="@+id/baju"
+                    android:icon="@drawable/baju"
+                    android:title="@string/baju"/>
+                <item
+                    android:id="@+id/celana"
+                    android:icon="@drawable/celana"
+                    android:title="@string/celana"/>
+                <item
+                    android:id="@+id/aksesoris"
+                    android:icon="@drawable/aksesoris"
+                    android:title="@string/aksesoris"/>
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/elektronik">
+            <menu>
+                <item
+                    android:id="@+id/handphone"
+                    android:icon="@drawable/ponsel"
+                    android:title="@string/handphone"/>
+                <item
+                    android:id="@+id/laptop"
+                    android:icon="@drawable/laptop"
+                    android:title="@string/laptop"/>
+                <item
+                    android:id="@+id/komputer"
+                    android:icon="@drawable/computer"
+                    android:title="@string/komputer"/>
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/hobi">
+            <menu>
+                <item
+                    android:id="@+id/buku"
+                    android:icon="@drawable/book"
+                    android:title="@string/buku"/>
+                <item
+                    android:id="@+id/gaming"
+                    android:icon="@drawable/gaming"
+                    android:title="@string/gaming"/>
+                <item
+                    android:id="@+id/mainan"
+                    android:icon="@drawable/toy"
+                    android:title="@string/mainan"/>
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/kebutuhan">
+            <menu>
+                <item
+                    android:id="@+id/dapur"
+                    android:icon="@drawable/dapur"
+                    android:title="@string/dapur"/>
+                <item
+                    android:id="@+id/office"
+                    android:icon="@drawable/office"
+                    android:title="@string/office"/>
+                <item
+                    android:id="@+id/properti"
+                    android:icon="@drawable/property"
+                    android:title="@string/properti"/>
+            </menu>
+        </item>
+
+    </group>
+
+</menu>
