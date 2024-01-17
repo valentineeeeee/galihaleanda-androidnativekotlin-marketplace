@@ -1,75 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:padding="16dp">
-
-    <ImageView
-        android:id="@+id/logoImageView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:contentDescription="App Logo"
-        android:src="@drawable/tablet_login_amicoo" />
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
 
     <TextView
-        android:id="@+id/textLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/logoImageView"
-        android:layout_marginTop="16dp"
-        android:text="LOGIN"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/editTextLoginEmail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textLogin"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edittext_background"
-        android:hint="Email"
-        android:inputType="text"
-        android:padding="13dp" />
-
-    <EditText
-        android:id="@+id/editTextLoginPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextLoginEmail"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edittext_background"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="13dp" />
-
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextLoginPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="Login"
-        android:textColor="@android:color/white" />
+        android:layout_height="52dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Welcome !"
+        android:textColor="@color/Hijau"
+        android:textSize="40sp" />
 
     <TextView
-        android:id="@+id/TextViewToRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/buttonLogin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:clickable="true"
-        android:onClick="panggilActivityRegister"
-        android:text="Belum punya akun? Daftar di sini."
-        android:textColor="@color/colorPrimary" />
-</RelativeLayout>
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:text="Silahkan login untuk melanjutkan"
+        android:textColor="@color/Hijau"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="35dp">
+
+        <EditText
+            android:id="@+id/editTextLoginEmail"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/lavender_border"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="Email"
+            android:paddingStart="12dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="5dp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editTextLoginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/lavender_border"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="Password"
+            android:paddingStart="12dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="5dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Lupa Password"
+            android:textColor="@color/Hijau" />
+
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Masuk"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/Hijau"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <TextView
+            android:id="@+id/TextViewToRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Belum Memiliki Akun? Daftar Disini"
+            android:textColor="@color/Hijau" />
+
+        <!--        <Button-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:background="@drawable/button_shape"-->
+        <!--            android:backgroundTint="@color/Hijau"-->
+        <!--            android:fontFamily="@font/poppinssemibold"-->
+        <!--            android:text="Masuk" />-->
+
+    </LinearLayout>
+
+</LinearLayout>

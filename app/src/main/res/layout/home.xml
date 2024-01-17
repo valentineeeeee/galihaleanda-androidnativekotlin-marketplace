@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/Hijau"
+        android:elevation="999dp"
+        android:gravity="bottom"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp">
+
+<!--        <ImageView-->
+<!--            android:id="@+id/profile_image"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="33dp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginBottom="7dp"-->
+<!--            android:background="@drawable/icon_menu" />-->
+
+        <EditText
+            android:layout_width="269dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="51dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/white"
+            android:hint="Cari Barang"
+            android:padding="12dp"/>
+
+
+        <ImageView
+            android:id="@+id/cartImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/kita" />
+
+        <!--        <TextView-->
+        <!--            android:layout_marginLeft="15dp"-->
+        <!--            android:maxLines="1"-->
+        <!--            android:text="Ngodingdulu.com"-->
+        <!--            android:textColor="#ffffff"-->
+        <!--            android:fontFamily="sans-serif"-->
+        <!--            android:textSize="20dp"-->
+        <!--            android:gravity="center"-->
+        <!--            android:layout_toEndOf="@id/profile_image"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_toRightOf="@id/profile_image"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_width="wrap_content" />-->
+
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:padding="5dp">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="2in"
+                        android:layout_height="1in"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="10dp"
+                        android:layout_margin="5dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:src="@drawable/kita"
+                            android:scaleType="fitXY" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="2in"
+                        android:layout_height="1in"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="10dp"
+                        android:layout_margin="5dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:src="@drawable/kita"
+                            android:scaleType="fitXY" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="2in"
+                        android:layout_height="1in"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="10dp"
+                        android:layout_margin="5dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:src="@drawable/kita"
+                            android:scaleType="fitXY" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/menu1Card"
+                    android:layout_width="0dp"
+                    android:layout_height="178dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    card_view:cardBackgroundColor="@color/white"
+                    card_view:cardCornerRadius="4dp"
+                    card_view:cardElevation="10dp"
+                    card_view:cardPreventCornerOverlap="false">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/kita" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Menu 1"
+                            android:textColor="@color/Hijau" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Menu 1"
+                            android:textColor="@color/Hijau" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/menu2Card"
+                    android:layout_width="0dp"
+                    android:layout_height="178dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    card_view:cardBackgroundColor="@color/white"
+                    card_view:cardCornerRadius="4dp"
+                    card_view:cardElevation="10dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/kita" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Menu 2"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Menu 2"
+                            android:textColor="@color/black" />
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="2"
+                android:layout_height="225dp">
+
+                <androidx.cardview.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:id="@+id/menu3Card"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="178dp"
+                    android:layout_margin="10dp"
+                    card_view:cardBackgroundColor="@color/white"
+                    card_view:cardCornerRadius="4dp"
+                    card_view:cardElevation="10dp" >
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/kita"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Menu 3"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Menu 3"
+                            android:textColor="@color/black" />
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:id="@+id/menu4Card"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="178dp"
+                    android:layout_margin="10dp"
+                    card_view:cardBackgroundColor="@color/white"
+                    card_view:cardCornerRadius="4dp"
+                    card_view:cardElevation="10dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/kita"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Menu 4"
+                            android:padding="5dp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Menu 4"
+                            android:padding="5dp"
+                            android:textColor="@color/black"/>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

@@ -1,124 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:padding="16dp">
-
-        <ImageView
-            android:id="@+id/logoImageView"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="32dp"
-            android:contentDescription="App Logo"
-            android:src="@drawable/tablet_login_amicoo" />
+        android:orientation="vertical"
+        tools:context=".SplashScreenActivity">
 
         <TextView
-            android:id="@+id/textRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/logoImageView"
-            android:layout_marginTop="16dp"
-            android:text="@string/register"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/editTextRegisterEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textRegister"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="16dp"
-            android:autofillHints="emailAddress"
-            android:background="@drawable/edittext_background"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:padding="13dp" />
-
-        <EditText
-            android:id="@+id/editTextRegisterAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editTextRegisterEmail"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="16dp"
-            android:autofillHints="postalAddress"
-            android:background="@drawable/edittext_background"
-            android:hint="@string/address"
-            android:inputType="textPostalAddress"
-            android:padding="13dp" />
-
-        <EditText
-            android:id="@+id/editTextRegisterUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editTextRegisterAddress"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="16dp"
-            android:autofillHints="name"
-            android:background="@drawable/edittext_background"
-            android:hint="@string/username"
-            android:inputType="text"
-            android:padding="13dp" />
-
-        <EditText
-            android:id="@+id/editTextRegisterPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editTextRegisterUsername"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:autofillHints="password"
-            android:background="@drawable/edittext_background"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:padding="13dp" />
-
-        <EditText
-            android:id="@+id/editTextRegisterKonfirmasiPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editTextRegisterPassword"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:autofillHints="password"
-            android:background="@drawable/edittext_background"
-            android:hint="@string/konfirmasiPassword"
-            android:inputType="textPassword"
-            android:padding="13dp" />
-
-        <Button
-            android:id="@+id/buttonRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editTextRegisterKonfirmasiPassword"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:onClick="onRegisterClick"
-            android:text="Register"
-            android:textColor="@android:color/white" />
+            android:layout_height="52dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="Daftar Akun !"
+            android:textColor="@color/Hijau"
+            android:textSize="40sp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/buttonRegister"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:clickable="true"
-            android:onClick="panggilActivityLogin"
-            android:text="Sudah punya akun? Login di sini."
-            android:textColor="@color/colorPrimary" />
-    </RelativeLayout>
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:text="Silahkan masukkan data pengguna"
+            android:textColor="@color/Hijau"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="35dp">
+
+            <EditText
+                android:id="@+id/editTextRegisterEmail"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/lavender_border"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Email"
+                android:paddingStart="12dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/editTextRegisterUsername"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/lavender_border"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Username"
+                android:paddingStart="12dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/editTextRegisterAddress"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/lavender_border"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Alamat"
+                android:paddingStart="12dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editTextRegisterPassword"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/lavender_border"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Password"
+                android:paddingStart="12dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editTextRegisterKonfirmasiPassword"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/lavender_border"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Konfirmasi Password"
+                android:paddingStart="12dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"
+                android:textSize="14sp" />
+
+            <!-- Button to Upload Image -->
+            <Button
+                android:id="@+id/buttonUploadImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Upload Image"
+                android:backgroundTint="@color/white"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/poppins_regular"/>
+
+            <TextView
+                android:id="@+id/textViewPreviewPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Preview Photo"
+                android:fontFamily="@font/poppins_regular"/>
+
+            <!-- ImageView for Displaying Uploaded Image -->
+            <ImageView
+                android:id="@+id/imageViewUploaded"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"/>
+
+            <Button
+                android:id="@+id/buttonRegister"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Masuk"
+                android:backgroundTint="@color/Hijau"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_semibold"/>
+
+            <TextView
+                android:id="@+id/textViewToLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sudah Memiliki Akun? Masuk"
+                android:gravity="center"
+                android:textColor="@color/Hijau"/>
+
+        </LinearLayout>
+    </LinearLayout>
 </ScrollView>

@@ -2,5 +2,13 @@
 <resources>
     <style name="BottomNavMenuItem">
         <item name="android:layout_margin">8dp</item>
+
+        <item name="popupTheme">@style/AppTheme.PopupOverlay</item>
+
     </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <!-- Customize your popup overlay theme here. -->
+    </style>
+
 </resources>

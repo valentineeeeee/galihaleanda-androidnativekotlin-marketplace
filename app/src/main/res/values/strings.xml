@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PRJCTMOBILE</string>
+    <string name="app_name">Beli Bekas</string>
     <string name="username">Username</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
@@ -13,6 +13,13 @@
     <string name="profile">Profile</string>
     <string name="tanggalLahir">Tanggal Lahir</string>
     <string name="address">Alamat</string>
+    <string name="product_price_format">Rp. %s</string>
+    <string name="tvOnBoarding1">Selamat datang di Belibekas! Temukan keberlanjutan dalam setiap pembelian. Mari bersama wujudkan perubahan positif menuju SDGs.</string>
+    <string name="tvOnBoarding2">Explore Belibekas: Platform belanja yang menginspirasi, berkualitas, dan berdampak positif. Temukan barang bekas unik untuk gaya hidup berkelanjutan.</string>
+    <string name="tvOnBoarding3">Belibekas: Kini lebih dari sekadar belanja. Setiap transaksi di sini adalah langkah kecil untuk lingkungan yang lebih baik. Selamat datang di perjalanan berkelanjutan!</string>
+    <string name="Skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="start">Start</string>
 
     <string name="abc_open_drawer_description">Open navigation drawer</string>
     <string name="abc_close_drawer_description">Close navigation drawer</string>
@@ -42,4 +49,6 @@
     <string name="properti">Properti</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hide_bottom_view_on_scroll_behavior">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
+
 </resources>

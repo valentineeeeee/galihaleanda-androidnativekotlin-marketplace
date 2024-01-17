@@ -1,139 +1,154 @@
 package com.example.prjctmobile
 
+import android.app.ProgressDialog
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.prjctmobile.databinding.ActivityRegisterBinding
+import com.example.prjctmobile.table.User
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.squareup.picasso.Picasso
+import java.util.UUID
 
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var ref: DatabaseReference
-//    private lateinit var ref: DatabaseReference
-//    private lateinit var userList: MutableList
-
-//    private lateinit var registerEmailEditText: EditText
-//    private lateinit var registerUsernameEditText: EditText
-//    private lateinit var registerPasswordEditText: EditText
-//    private lateinit var registerButton: Button
-
+    lateinit var choose_img: Button
+    lateinit var upload_image: Button
+    lateinit var image_view: ImageView
+    var fileUri: Uri? = null
+    private var imageUrl: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
+        choose_img = findViewById(R.id.buttonUploadImage)
+        upload_image = findViewById(R.id.buttonRegister)
+        image_view = findViewById(R.id.imageViewUploaded)
+
         ref = FirebaseDatabase.getInstance().getReference("user")
 
-        binding.buttonRegister.setOnClickListener {
-            val id = ref.push().key
-            val email = binding.editTextRegisterEmail.text.toString()
-            val address = binding.editTextRegisterAddress.text.toString()
-            val username = binding.editTextRegisterUsername.text.toString()
-            val password = binding.editTextRegisterPassword.text.toString()
-            val konfirmasiPass = binding.editTextRegisterKonfirmasiPassword.text.toString()
+        choose_img.setOnClickListener{
+            val intent = Intent()
+            intent.type = "image/*"
+            intent.action = Intent.ACTION_GET_CONTENT
+            startActivityForResult(
+                Intent.createChooser(intent, "Choose image to upload"),0
+            )
+        }
 
-            val user = User(id!!, email, address, username, password)
-
-            if (email.isNotEmpty() && address.isNotEmpty() && username.isNotEmpty() && password.isNotEmpty()
-                && konfirmasiPass.isNotEmpty()
-            ) {
-                if (password == konfirmasiPass) {
-                    ref.child(id).setValue(user).addOnCompleteListener {
-                        Toast.makeText(
-                            applicationContext,
-                            "Registrasi berhasil",
-                            Toast.LENGTH_SHORT
-                        )
-                            .show()
-                        val intent = Intent(this, LoginActivity::class.java)
-                        startActivity(intent)
-                    }
-                } else {
-                    Toast.makeText(this, "Password tidak cocok!", Toast.LENGTH_SHORT).show()
-                }
+        upload_image.setOnClickListener{
+            if (fileUri != null) {
+                val productId = ref.push().key!!
+                uploadImage()
             } else {
-                Toast.makeText(this, "Field tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Please select image",
+                    Toast.LENGTH_SHORT).show()
             }
         }
 
-//        ref = FirebaseDatabase.getInstance().getReference("user")
-
-//        binding.buttonRegister.setOnClickListener(this)
-//        registerEmailEditText = findViewById(R.id.editTextRegisterEmail)
-//        registerUsernameEditText = findViewById(R.id.editTextRegisterUsername)
-//        registerPasswordEditText = findViewById(R.id.editTextRegisterPassword)
-//        //registerButton = findViewById(R.id.buttonLogin)
-//
-//        registerButton.setOnClickListener {
-//            val email = registerEmailEditText.text.toString()
-//            val username = registerUsernameEditText.text.toString()
-//            val password = registerPasswordEditText.text.toString()
-//
-//            // Implementasi logika pendaftaran
-//            if (isValidRegistration(email, username, password)) {
-//                // Pendaftaran berhasil, implementasikan tindakan yang sesuai
-//                showToast("Pendaftaran berhasil")
-//                // Tentu, Anda mungkin ingin menyimpan data pengguna ke database atau tempat penyimpanan lainnya.
-//            } else {
-//                showToast("Pendaftaran gagal. Pastikan email, username, dan password valid.")
-//            }
-//        }
+        binding.textViewToLogin.setOnClickListener{
+            navigateToLogin()
+        }
     }
 
-//    fun onRegisterClick(v: View?) {
-//        simpanData()
-//    }
-//
-//    private fun simpanData() {
-//        val email = binding.editTextRegisterEmail.toString().trim()
-//        val alamat = binding.editTextRegisterAddress.toString().trim()
-//        val username = binding.editTextRegisterUsername.toString().trim()
-//        val password = binding.editTextRegisterPassword.toString().trim()
-//
-//        if (email.isEmpty() && alamat.isEmpty() && android.util.Patterns.EMAIL_ADDRESS.matcher(
-//                email
-//            ).matches() && password.isEmpty()
-//        ) {
-//            Toast.makeText(this, "Isi data anda secara lengkap untuk mendaftar", Toast.LENGTH_SHORT)
-//                .show()
-//            return
-//        }
-//        val userId = ref.push().key
-//        val user = User(userId!!, email, alamat, username, password)
-//
-//        ref.child(userId).setValue(user).addOnCompleteListener {
-//            Toast.makeText(applicationContext, "Akun berhasil dibuat!", Toast.LENGTH_SHORT)
-//                .show()
-//
-//            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
-//    }
-//
-//    fun panggilActivityLogin(view: View?) {
-//        val i = Intent(applicationContext, LoginActivity::class.java)
-//        startActivity(i)
-//    }
-//
-//    private fun isValidRegistration(email: String, username: String, password: String): Boolean {
-//        // Implementasikan validasi pendaftaran sesuai kebutuhan aplikasi Anda.
-//        // Misalnya, pastikan bahwa email belum terdaftar sebelumnya dan password memiliki keamanan yang memadai.
-//        return email.isNotEmpty() && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() &&
-//                username.isNotEmpty() && password.isNotEmpty()
-//    }
-//
-//    private fun showToast(message: String) {
-//        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-//    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 0 && resultCode == RESULT_OK && data != null && data.data != null) {
+            fileUri = data.data
+            try {
+                val bitmap : Bitmap = MediaStore.Images.Media.getBitmap(contentResolver,fileUri)
+                image_view.setImageBitmap(bitmap)
+            } catch (e: Exception) {
+                Log.e("Exception", "Error: " + e)
+            }
+        }
+    }
 
-//    fun onRegisterClick(view: android.view.View) {
-//        // Panggil fungsi untuk menangani klik pada tombol Register
-//        registerButton.performClick()
-//    }
+    private fun uploadImage() {
+        if (fileUri != null) {
+            val progressDialog = ProgressDialog(this)
+            progressDialog.setTitle("Uploading Image...")
+            progressDialog.setMessage("Processing")
+            progressDialog.show()
+
+            val ref: StorageReference =
+                FirebaseStorage.getInstance().getReference("user")
+                    .child(UUID.randomUUID().toString())
+
+            ref.putFile(fileUri!!).addOnSuccessListener { taskSnapshot ->
+                // Gambar berhasil diunggah, dapatkan URL gambar
+                ref.downloadUrl.addOnSuccessListener { uri ->
+                    imageUrl = uri.toString() // Simpan URL gambar ke variabel global
+                    progressDialog.dismiss()
+
+                    // Setelah upload gambar selesai, baru lakukan registrasi
+                    performRegistration()
+
+                    Toast.makeText(
+                        applicationContext, "File Uploaded Successfully",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }.addOnFailureListener {
+                progressDialog.dismiss()
+                Toast.makeText(applicationContext, "Failed", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
+    private fun performRegistration() {
+        val userId = ref.push().key
+        val email = binding.editTextRegisterEmail.text.toString()
+        val address = binding.editTextRegisterAddress.text.toString()
+        val username = binding.editTextRegisterUsername.text.toString()
+        val password = binding.editTextRegisterPassword.text.toString()
+        val konfirmasiPass = binding.editTextRegisterKonfirmasiPassword.text.toString()
+
+        val user = User(userId!!, email, address, username, password, imageUrl)
+
+        if (email.isNotEmpty() && address.isNotEmpty() && username.isNotEmpty() && password.isNotEmpty()
+            && konfirmasiPass.isNotEmpty()
+        ) {
+            if (password == konfirmasiPass) {
+                ref.child(userId).setValue(user).addOnCompleteListener {
+                    Toast.makeText(
+                        applicationContext,
+                        "Registrasi berhasil",
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                }
+            } else {
+                Toast.makeText(this, "Password tidak cocok!", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Toast.makeText(this, "Field tidak boleh kosong", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun navigateToLogin() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+    }
 
 }

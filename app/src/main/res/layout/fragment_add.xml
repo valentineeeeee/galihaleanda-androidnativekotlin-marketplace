@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".fragment.AddFragment">
+
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sell Your Unused Stuff"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textViewProductNameDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewDescription"
+        android:layout_marginTop="16dp"
+        android:text="Product Name" />
+
+    <EditText
+        android:id="@+id/editTextProductName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:layout_below="@id/textViewProductNameDescription"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/textViewProductDescriptionDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextProductName"
+        android:layout_marginTop="16dp"
+        android:text="Product Description" />
+
+    <EditText
+        android:id="@+id/editTextProductDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewProductDescriptionDescription"
+        android:padding="10dp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/textViewProductPriceDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextProductDescription"
+        android:layout_marginTop="16dp"
+        android:text="Product Price" />
+
+    <EditText
+        android:id="@+id/editTextProductPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/textViewProductPriceDescription"
+        android:padding="10dp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/textViewProductCategoryDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextProductPrice"
+        android:layout_marginTop="16dp"
+        android:text="Product Category" />
+
+    <Spinner
+        android:id="@+id/spinnerCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewProductCategoryDescription"
+        android:padding="10dp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/textViewProductImageDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerCategory"
+        android:layout_marginTop="16dp"
+        android:text="Product Image" />
+
+    <Button
+        android:id="@+id/chooseFragmentImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewProductImageDescription"
+        android:text="Choose image from galery"
+        android:textColor="@android:color/background_dark"
+        android:backgroundTint="@color/white"
+        android:padding="10dp"
+        android:layout_marginBottom="5dp"/>
+
+    <Button
+        android:id="@+id/buttonFragmentAddProduct"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Add Product"
+
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_below="@id/chooseFragmentImage" />
+
+    <ImageView
+        android:id="@+id/imageFragmentView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/buttonFragmentAddProduct"
+        />
+
+
+</RelativeLayout>

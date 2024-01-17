@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/Hijau"
+        android:elevation="999dp"
+        android:gravity="bottom"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:clipToPadding="false"
+        android:layout_marginTop="68dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            android:textColor="@color/Hijau"
+            android:layout_marginEnd="279dp"
+            android:text="alamat" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="123dp"
+        android:background="#ECECEC" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="140dp"
+        android:textSize="17dp"
+        android:layout_marginBottom="0dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Nama Barang"
+        android:textColor="@color/Hijau" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="176dp"
+        android:background="#ECECEC" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="178dp"
+        android:background="@color/white"
+        android:src="@drawable/kita" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="399dp"
+        android:background="#ECECEC" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="1in"
+        android:layout_marginTop="400dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Nama Lengkap :"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginStart="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nomor HP :"
+            android:layout_marginTop="34dp"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginStart="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kota :"
+            android:layout_marginTop="59dp"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginStart="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama jL, No. Rumah :"
+            android:layout_marginTop="87dp"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginStart="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detail Lainnya :"
+            android:layout_marginTop="118dp"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginStart="20dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="610dp"
+        android:background="#ECECEC" />
+
+
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="630dp"
+        android:background="@drawable/bg_btn_beli">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Beli Sekarang"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="640dp"
+        android:textSize="18dp"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:text="Total Pembayaran" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="677dp"
+        android:textSize="17dp"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:text="Rp. 200000" />
+
+
+</RelativeLayout>
